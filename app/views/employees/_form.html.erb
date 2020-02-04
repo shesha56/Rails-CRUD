@@ -1,0 +1,30 @@
+
+<% if @employee.errors.any? %>
+<div class="alert-danger ">
+    <h2>Please correct the below errors </h2>
+    <ul>
+        <% @employee.errors.messages.values.each do |msg| %>
+        <li><%=msg[0] %> </li>
+        <% end %>
+    </ul>
+    </div>
+<% end %>
+
+<%= form_for @employee do |f| %>
+ <div class="form-group">
+<%= f.label :employeename, "Employee Name" %> <br/>
+<%= f.text_field :employeename %>
+</div>
+<div class="form-group">
+<%= f.label :designation %> <br/>
+<%= f.text_field :designation %>
+</div>
+<div class="form-group">
+<%= f.label :phone %> <br/>
+<%= f.text_field :phone %>
+</div>
+<div class="form-group">
+<%= f.submit  :class => "btn btn-success" %>
+<% end %>
+ <%= link_to "Back to Employees list", employees_path, class: "btn btn-success" %> 
+ </div>

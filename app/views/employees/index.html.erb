@@ -1,0 +1,26 @@
+<h1>Employee list </h1>
+<p> <%= link_to "Create New Employee", new_employee_path, class: "btn btn-success" %> </p>
+
+<table class="table table-bordered">
+<tr>
+<th scope="col">Employee Name</th>
+<th scope="col">Designation</th>
+<th scope="col">Phone</th>
+<th scope="col"></th>
+<th scope="col"></th>
+<th scope="col"></th>
+</tr>
+
+<% @employees.each do |employee| %>
+<tr>
+<td scope='row'><%= employee.employeename %> </td>
+<td><%= employee.designation %> </td>
+<td><%= employee.phone %> </td>
+<td><%= link_to "Edit", edit_employee_path(employee) %> </td>
+<td><%= link_to "Show", employee_path(employee) %> </td>
+<td><%= link_to "Delete", employee_path(employee), method: :delete, data: {confirm: "Are you Sure?"} %> </td>
+</tr>
+<% end %>
+
+</table>
+

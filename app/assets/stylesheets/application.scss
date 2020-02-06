@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";  
 @import "bootstrap";
+.employee-actions{
+    border-top:1px solid #eaeaea;
+    padding-top:5px;
+}
+.employee-name{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.employee-details{
+    border-top:1px solid #eaeaea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

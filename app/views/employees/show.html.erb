@@ -1,6 +1,7 @@
 <div class="form-group">
 <h1>Showing the selected Employee </h1>
 </div>
+<div class="well">
 <div class="form-group">
     Employee Name : <%= @employee.employeename %>
 </div>
@@ -12,6 +13,7 @@
 <div class="form-group">
     Phone : <%= @employee.phone %>
 </div>
-<div class="form-group"> <%= link_to "Edit Employee", edit_employee_path(@employee), class: "btn btn-success" %>
- <%= link_to "Back to Employees list", employees_path, class: "btn btn-success" %> 
+<div class="form-group"> <%= link_to "Edit Employee", edit_employee_path(@employee), class: "btn btn-primary" %>
+ <%= link_to "Back to Employees list", employees_path, class: "btn btn-primary" %> 
+</div>
 </div>

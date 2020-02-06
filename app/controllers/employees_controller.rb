@@ -11,7 +11,7 @@ end
 def create
     @employee= Employee.new(employee_params)
     if @employee.save
-        flash[:notice] = "Employee Created Sucessfully"
+        flash[:success] = "Employee Created Sucessfully"
         redirect_to employee_path(@employee)
     else
         render 'new'
@@ -25,7 +25,7 @@ end
 def update
     @employee=Employee.find(params[:id])
     if @employee.update(employee_params)
-        flash[:notice] = "Employee Updated Sucessfully"
+        flash[:success] = "Employee Updated Sucessfully"
         redirect_to employee_path(@employee)
     else
         render 'edit'
@@ -39,7 +39,7 @@ end
 def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
-    flash[:notice] = "Employee Deleted Sucessfully"
+    flash[:danger] = "Employee Deleted Sucessfully"
     redirect_to employees_path 
 end
 

@@ -1,26 +1,25 @@
-<h1>Employee list </h1>
-<p> <%= link_to "Create New Employee", new_employee_path, class: "btn btn-success" %> </p>
+<h1 align="center">Employee list </h1>
+<p> <%= link_to "Create New Employee", new_employee_path, class: "btn btn-primary" %> </p>
 
-<table class="table table-bordered">
-<tr>
-<th scope="col">Employee Name</th>
-<th scope="col">Designation</th>
-<th scope="col">Phone</th>
-<th scope="col"></th>
-<th scope="col"></th>
-<th scope="col"></th>
-</tr>
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+        <% @employees.each do |employee| %>
+            <div class="well well-lg">
+                <div class="employee-name">
+                <%= link_to employee.employeename, employee_path(employee) %>
+                </div>
+                <div class="employee-details">
+                    <%= employee.designation %>                    
+                </div>
+                <div class="employee-actions">
+                    <%= link_to "Edit", edit_employee_path(employee), class: "btn btn-xm btn-success" %>
+                    <%= link_to "Delete", employee_path(employee), class: "btn btn-xm btn-danger", method: :delete, data: {confirm: "Are you Sure?"} %> 
+                </div>
+            </div>
+        <% end %>    
+    <div>
+<div>
 
-<% @employees.each do |employee| %>
-<tr>
-<td scope='row'><%= employee.employeename %> </td>
-<td><%= employee.designation %> </td>
-<td><%= employee.phone %> </td>
-<td><%= link_to "Edit", edit_employee_path(employee) %> </td>
-<td><%= link_to "Show", employee_path(employee) %> </td>
-<td><%= link_to "Delete", employee_path(employee), method: :delete, data: {confirm: "Are you Sure?"} %> </td>
-</tr>
-<% end %>
 
-</table>
+
 
